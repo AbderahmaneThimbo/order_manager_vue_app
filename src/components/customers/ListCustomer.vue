@@ -44,8 +44,8 @@
           </tr>
         </tbody>
       </table>
-      <button type="button" class="btn btn-primary" >Save changes</button>
-      <AddCustomer @customer-added="addCustomerToList" />
+
+      <div ><AddCustomer @customer-added="addCustomerToList" /></div>
    
    
       <div
@@ -74,8 +74,14 @@
               <p><strong>Phone:</strong> {{ selectedCustomer?.phone }}</p>
             </div>
             <div class="modal-footer">
-             <button type="button" class="btn btn-secondary  " aria-label="Close" data-dismiss="modal">Close</button>
-      </div>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
           </div>
         </div>
       </div>
