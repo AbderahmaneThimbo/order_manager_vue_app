@@ -35,11 +35,11 @@
                 <i class="fas fa-edit"></i>
               </button>
               <button
-                class="btn btn-danger btn-sm"
-                @click="deleteCustomer(customer.id)"
-              >
-                <i class="fas fa-trash"></i>
-              </button>
+              class="btn btn-danger btn-sm"
+              @click="confirmDeleteCustomer(customer.id)"
+            >
+              <i class="fas fa-trash"></i>
+            </button>
             </td>
           </tr>
         </tbody>
@@ -132,6 +132,15 @@
   const openEdit = (customer) => {
     customerToEdit.value = { ...customer }; 
   };
+
+  const confirmDeleteCustomer = (id) => {
+  const isConfirmed = confirm("Êtes-vous sûr de vouloir supprimer ce client ?");
+  
+  if (isConfirmed) {
+    deleteCustomer(id); 
+  }
+};
+  
   
   const deleteCustomer = (id) => {
     customers.value = customers.value.filter((customer) => customer.id !== id);
