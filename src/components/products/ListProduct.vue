@@ -10,7 +10,7 @@
                     <th>Stock</th>
                     <th>Category</th>
                     <th>Barcode</th>
-                    <th>Starus</th>
+                    <th>Status</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
