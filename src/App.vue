@@ -20,13 +20,13 @@ import { RouterLink, RouterView } from "vue-router";
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item me-3">
-              <RouterLink class="nav-link" to="/">Clients</RouterLink>
+              <RouterLink class="nav-link" to="/"><i class="fa-solid fa-users"></i> Clients</RouterLink>
             </li>
             <li class="nav-item me-3">
-              <RouterLink class="nav-link" to="/products">Produits</RouterLink>
+              <RouterLink class="nav-link" to="/products"><i class="fa-solid fa-basket-shopping"></i> Produits</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/orders">Commandes</RouterLink>
+              <RouterLink class="nav-link" to="/orders"><i class="fa-solid fa-cart-arrow-down"></i> Commandes</RouterLink>
             </li>
           </ul>
         </div>
