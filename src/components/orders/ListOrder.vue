@@ -1,9 +1,12 @@
 <template>
     <div class="container mt-5">
-        <h2 class="mb-4">List of Orders</h2>
-        <router-link to="/create" class="btn btn-primary mb-3">
-            Add New Order
-        </router-link>
+        <h2 class="mb-2 d-inline-block">List of Orders</h2>
+        <div class="d-flex justify-content-between mb-3">
+            <h2 class="mb-0"></h2>
+            <router-link to="/create" class="btn btn-primary">
+                Add New Order
+            </router-link>
+        </div>
 
         <table class="table table-hover">
             <thead class="table-dark ">
@@ -70,7 +73,7 @@
             </div>
         </div>
 
-      
+
     </div>
 </template>
 
@@ -117,7 +120,7 @@ const deleteOrder = (id) => {
 const router = useRouter();
 
 const redirectToEdit = (order) => {
-  router.push({ name: 'edite', params: { id: order.id } });
+    router.push({ name: 'edite', params: { id: order.id } });
 };
 </script>
 

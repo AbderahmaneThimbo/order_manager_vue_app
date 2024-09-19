@@ -1,6 +1,10 @@
 <template>
     <div class="container mt-5">
-        <h2 class=" mb-4">List of Products</h2>
+        <h2 class="mb-2 d-inline-block">List of Products</h2>
+        <div class="d-flex justify-content-between mb-3">
+            <h2 class="mb-0"></h2>
+            <AddProduct @product-added="addProductToList" />
+        </div>
         <table class="table table-hover">
             <thead class="table-dark">
                 <tr>
@@ -40,9 +44,7 @@
             </tbody>
         </table>
 
-        <div>
-            <AddProduct @product-added="addProductToList" />
-        </div>
+        
 
 
         <div class="modal fade" id="viewproductModal" tabindex="-1" aria-labelledby="viewproductModalTitle"
