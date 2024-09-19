@@ -28,8 +28,7 @@
                             data-bs-target="#viewOrderModal">
                             <i class="fas fa-eye"></i>
                         </button>
-                        <button class="btn btn-warning btn-sm me-2" @click="openEdit(order)" data-bs-toggle="modal"
-                            data-bs-target="#editOrderModal">
+                        <button class="btn btn-warning btn-sm me-2" @click="redirectToEdit(order)">
                             <i class="fas fa-edit"></i>
                         </button>
                         <button class="btn btn-danger btn-sm" @click="confirmDeleteOrder(order.id)">
@@ -71,22 +70,13 @@
             </div>
         </div>
 
-        <div class="modal fade" id="editOrderModal" tabindex="-1" aria-labelledby="editOrderModalTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <UpdateOrder :order="orderToEdit" @order-updated="updateOrder" />
-                    </div>
-                </div>
-            </div>
-        </div>
+      
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import UpdateOrder from './UpdateOrder.vue';
+import { useRouter } from 'vue-router';
 
 const orders = ref([
     {
@@ -106,15 +96,12 @@ const orders = ref([
 ]);
 
 const selectedOrder = ref(null);
-const orderToEdit = ref(null);
+
 
 const viewDetails = (order) => {
     selectedOrder.value = order;
 };
 
-const openEdit = (order) => {
-    orderToEdit.value = { ...order };
-};
 
 const confirmDeleteOrder = (id) => {
     const isConfirmed = confirm("Are you sure you want to delete this order?");
@@ -127,15 +114,10 @@ const deleteOrder = (id) => {
     orders.value = orders.value.filter((order) => order.id !== id);
 };
 
-const updateOrder = (updatedOrder) => {
-    const index = orders.value.findIndex((order) => order.id === updatedOrder.id);
-    if (index !== -1) {
-        orders.value[index] = { ...updatedOrder };
-    }
-    orderToEdit.value = null;
+const router = useRouter();
 
-    const modal = new bootstrap.Modal(document.getElementById("editOrderModal"));
-    modal.hide();
+const redirectToEdit = (order) => {
+  router.push({ name: 'edite', params: { id: order.id } });
 };
 </script>
 

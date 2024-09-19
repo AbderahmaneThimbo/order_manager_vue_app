@@ -3,6 +3,7 @@ import ListCustomer from '../components/customers/ListCustomer.vue'
 import ListOrder from '@/components/orders/ListOrder.vue'
 import ListProduct from '@/components/products/ListProduct.vue'
 import AddOrder from '@/components/orders/AddOrder.vue'
+import UpdateOrder from '@/components/orders/UpdateOrder.vue'
 
 
 const router = createRouter({
@@ -22,6 +23,11 @@ const router = createRouter({
         path: '/create',
         name: 'create',
         component: AddOrder
+      },
+      {
+        path: '/edite',
+        name: 'edite',
+        component: UpdateOrder
       },
       {
         path: '/products',

@@ -111,14 +111,6 @@ const removeDetail = (index) => {
 };
 
 
-const submitOrder = () => {
-  const newOrder = {
-    ...order.value,
-    details: orderDetails.value,
-  };
-  console.log('Order Submitted:', newOrder);
-};
-
 
 const router = useRouter();
 
