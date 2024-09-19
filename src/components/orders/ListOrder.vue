@@ -57,7 +57,7 @@
 
                         <strong>Order Details:</strong>
                         <ul>
-                            <li v-for="product in selectedOrder?.products" :key="product.name">
+                            <li v-for="product in selectedOrder?.orderDetail" :key="product.name">
                                 {{ product.name }} - Quantity: {{ product.quantity }} - Price: {{ product.price }}mru
                             </li>
                         </ul>
@@ -90,18 +90,18 @@ import UpdateOrder from './UpdateOrder.vue';
 
 const orders = ref([
     {
-        id: 1, date: '2022/01/02', customer: 'Assa Baradji', delivery_address: 'Basra', track_number: 'A10', status: 'Delivered', products: [
+        id: 1, date: '2022/01/02', customer: 'Assa Baradji', delivery_address: 'Basra', track_number: 'A10', status: 'Delivered', orderDetail: [
             { name: 'Product 001', quantity: 2, price: 15 },
             { name: 'Product 002', quantity: 1, price: 50 }
         ]
     },
     {
-        id: 2, date: '2024/01/02', customer: 'Banckolé', delivery_address: 'Pk8', track_number: 'B10', status: 'Processing', products: [
+        id: 2, date: '2024/01/02', customer: 'Banckolé', delivery_address: 'Pk8', track_number: 'B10', status: 'Processing', orderDetail: [
             { name: 'Product 002', quantity: 2, price: 20 }]
     },
     {
-        id: 3, date: '2023/01/02', customer: 'Harouna Traoré', delivery_address: 'Basra', track_number: 'C10', status: 'Shipped', products: [
-            { name: 'Product 002', quantity: 6, price: 60 }]
+        id: 3, date: '2023/01/02', customer: 'Harouna Traoré', delivery_address: 'Basra', track_number: 'C10', status: 'Shipped', orderDetail: [
+            { name: 'Product 003', quantity: 6, price: 60 }]
     },
 ]);
 
