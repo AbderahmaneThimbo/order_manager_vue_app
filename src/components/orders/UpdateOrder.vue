@@ -2,7 +2,7 @@
     <form @submit.prevent="submitOrder">
 
         <div class="d-flex justify-content-end mb-3 mt-3">
-            <button type="button" class="btn btn-secondary" @click="goHome">Return to Home</button>
+            <button type="button" class="btn btn-secondary" @click="goHome">Orders List</button>
             <button type="submit" class="btn btn-primary ms-2">Update Orders</button>
         </div>
 

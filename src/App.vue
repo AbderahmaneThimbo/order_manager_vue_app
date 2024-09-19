@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg custom-navbar">
       <div class="container">        
         <button
           class="navbar-toggler"
@@ -35,14 +35,28 @@ import { RouterLink, RouterView } from "vue-router";
   </header>
   <div class="container contenu">
     <RouterView />
-    
   </div>
 </template>
 
 <style scoped>
-img{
-  width: 70px;
+
+.custom-navbar {
+  background-color: #464646; 
+  border-bottom-left-radius: 21px;
+  border-bottom-right-radius: 21px;
 }
-</style> 
 
+.navbar-nav .nav-link {
+  color: white;
+}
 
+.navbar-nav .nav-link:hover {
+  color: #00bfff; 
+}
+.navbar-nav .nav-link:focus{
+  color: #00bfff; 
+}
+.contenu {
+  padding: 20px;
+}
+</style>
