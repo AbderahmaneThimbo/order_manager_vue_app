@@ -104,7 +104,7 @@ const addDetail = () => {
 
 const removeDetail = (index) => {
   if (orderDetails.value.length === 1) {
-    alert('A command must have at least one detail.');
+    alert('Une commande doit comporter au moins un détail.');
   } else {
     orderDetails.value.splice(index, 1);
   }

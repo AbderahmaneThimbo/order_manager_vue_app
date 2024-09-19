@@ -8,7 +8,7 @@
             </router-link>
         </div>
 
-        <table class="table table-hover">
+        <table class="table table-hover table-bordered">
             <thead class="table-dark ">
                 <tr>
                     <th>Date</th>
@@ -27,14 +27,14 @@
                     <td>{{ order.track_number }}</td>
                     <td>{{ order.status }}</td>
                     <td class="text-center">
-                        <button class="btn btn-info btn-sm me-2" @click="viewDetails(order)" data-bs-toggle="modal"
-                            data-bs-target="#viewOrderModal">
+                        <button class="btn btn-outline-info btn-sm me-2" @click="viewDetails(order)"
+                            data-bs-toggle="modal" data-bs-target="#viewOrderModal">
                             <i class="fas fa-eye"></i>
                         </button>
-                        <button class="btn btn-warning btn-sm me-2" @click="redirectToEdit(order)">
+                        <button class="btn btn-outline-warning btn-sm me-2" @click="redirectToEdit(order)">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button class="btn btn-danger btn-sm" @click="confirmDeleteOrder(order.id)">
+                        <button class="btn btn-outline-danger btn-sm" @click="confirmDeleteOrder(order.id)">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>
@@ -107,7 +107,7 @@ const viewDetails = (order) => {
 
 
 const confirmDeleteOrder = (id) => {
-    const isConfirmed = confirm("Are you sure you want to delete this order?");
+    const isConfirmed = confirm("Êtes-vous sûr de vouloir supprimer cette commande?");
     if (isConfirmed) {
         deleteOrder(id);
     }

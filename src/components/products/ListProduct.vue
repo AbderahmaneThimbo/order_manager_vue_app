@@ -5,7 +5,7 @@
             <h2 class="mb-0"></h2>
             <AddProduct @product-added="addProductToList" />
         </div>
-        <table class="table table-hover">
+        <table class="table table-hover table-bordered">
             <thead class="table-dark">
                 <tr>
                     <th>Product Name</th>
@@ -28,15 +28,15 @@
                     <td>{{ product.barcode }}</td>
                     <td>{{ product.status }}</td>
                     <td class="text-center">
-                        <button class="btn btn-info btn-sm me-2" @click="viewDetails(product)" data-bs-toggle="modal"
-                            data-bs-target="#viewproductModal">
+                        <button class="btn btn-outline-info btn-sm me-2" @click="viewDetails(product)"
+                            data-bs-toggle="modal" data-bs-target="#viewproductModal">
                             <i class="fas fa-eye"></i>
                         </button>
-                        <button class="btn btn-warning btn-sm me-2" @click="openEdit(product)" data-bs-toggle="modal"
-                            data-bs-target="#editproductModal">
+                        <button class="btn btn-outline-warning btn-sm me-2" @click="openEdit(product)"
+                            data-bs-toggle="modal" data-bs-target="#editproductModal">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button class="btn btn-danger btn-sm" @click="confirmDeleteProduct(product.id)">
+                        <button class="btn btn-outline-danger btn-sm" @click="confirmDeleteProduct(product.id)">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>
@@ -44,7 +44,7 @@
             </tbody>
         </table>
 
-        
+
 
 
         <div class="modal fade" id="viewproductModal" tabindex="-1" aria-labelledby="viewproductModalTitle"
@@ -92,8 +92,8 @@ import AddProduct from "./AddProduct.vue";
 import UpdateProduct from "./UpdateProduct.vue";
 
 const products = ref([
-    {id: 1, name: "Product 001", description: "High-quality product", price: "100", stock: "10", category: "Electronics", barcode: "123-456-7890", status: "Active" },
-    {id: 2, name: "Product 002", description: "High-quality product", price: "100", stock: "10", category: "Electronics", barcode: "123-456-7890", status: "Active" },
+    { id: 1, name: "Product 001", description: "High-quality product", price: "100", stock: "10", category: "Electronics", barcode: "123-456-7890", status: "Active" },
+    { id: 2, name: "Product 002", description: "High-quality product", price: "100", stock: "10", category: "Electronics", barcode: "123-456-7890", status: "Active" },
     { id: 3, name: "Product 003", description: "High-quality product", price: "100", stock: "10", category: "Electronics", barcode: "123-456-7890", status: "Active" },
 
 

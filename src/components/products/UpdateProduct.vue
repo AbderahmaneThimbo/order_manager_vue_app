@@ -91,15 +91,15 @@ const updateProduct = () => {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-  }
-  
-  .left-column,
-  .right-column {
+}
+
+.left-column,
+.right-column {
     flex: 1;
-  }
-  
-  textarea {
+}
+
+textarea {
     width: 100%;
     resize: none;
-  }
+}
 </style>
