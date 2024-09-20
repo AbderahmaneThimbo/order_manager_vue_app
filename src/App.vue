@@ -1,5 +1,7 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRoute } from "vue-router";
+
+const route = useRoute(); 
 </script>
 
 <template>
@@ -11,16 +13,33 @@ import { RouterLink, RouterView } from "vue-router";
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item me-3">
-              <RouterLink class="nav-link" to="/"><i class="fa-solid fa-users"></i> Customers</RouterLink>
-            </li>
-            <li class="nav-item me-3">
-              <RouterLink class="nav-link" to="/products"><i class="fa-solid fa-basket-shopping"></i> Products
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <RouterLink
+                :class="['nav-link', { active: route.path === '/' }]" 
+                id="pills-customers-tab" 
+                to="/"
+              >
+                <i class="fa-solid fa-users"></i> Customers
               </RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/orders"><i class="fa-solid fa-cart-arrow-down"></i> Orders</RouterLink>
+              <RouterLink
+                :class="['nav-link', { active: route.path === '/products' }]" 
+                id="pills-products-tab" 
+                to="/products"
+              >
+                <i class="fa-solid fa-basket-shopping"></i> Products
+              </RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink
+                :class="['nav-link', { active: route.path === '/orders' }]" 
+                id="pills-orders-tab" 
+                to="/orders"
+              >
+                <i class="fa-solid fa-cart-arrow-down"></i> Orders
+              </RouterLink>
             </li>
           </ul>
         </div>
@@ -34,7 +53,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 <style scoped>
 .custom-navbar {
-  background-color: #464646;
+  background-color: whitesmoke;
   border-bottom-left-radius: 21px;
   border-bottom-right-radius: 21px;
 }
@@ -43,11 +62,7 @@ import { RouterLink, RouterView } from "vue-router";
   color: white;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #fff200;
-}
-
-.navbar-nav .nav-link:focus {
+.navbar-nav .nav-link.active {
   color: #00bfff;
 }
 

@@ -51,10 +51,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p><strong>Name:</strong> {{ selectedCustomer?.name }}</p>
-            <p><strong>Address:</strong> {{ selectedCustomer?.address }}</p>
-            <p><strong>Email:</strong> {{ selectedCustomer?.email }}</p>
-            <p><strong>Phone:</strong> {{ selectedCustomer?.phone }}</p>
+            <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" name="name" class="form-control" :value="selectedCustomer?.name" readonly />
+                </div>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Address</label>
+                  <input type="text" name="name" class="form-control" :value="selectedCustomer?.address" readonly />
+                </div>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Email</label>
+                  <input type="email" name="name" class="form-control" :value="selectedCustomer?.email" readonly />
+                </div>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Phone</label>
+                  <input type="text" name="name" class="form-control" :value="selectedCustomer?.phone" readonly />
+                </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -163,5 +175,8 @@ h2 {
 
 .custom-table {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+input {
+  background-color: lavender;
 }
 </style>
