@@ -10,8 +10,8 @@
         <input type="text" id="name" class="form-control" v-model="clientModifie.name" required />
       </div>
       <div class="mb-3">
-        <label for="address" class="form-label">Adresse</label>
-        <input type="text" id="address" class="form-control" v-model="clientModifie.address" required />
+        <label for="name" class="form-label">Address</label>
+        <textarea name="description" class="form-control" v-mpdel="clientModifie.address" required></textarea>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>

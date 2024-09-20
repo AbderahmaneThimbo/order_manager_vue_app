@@ -47,9 +47,9 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="description" class="form-label">Description</label>
-              <textarea name="description" class="form-control" v-model="newProduct.description" required></textarea>
-            </div>
+  <label for="description" class="form-label">Description</label>
+  <textarea name="description" class="form-control" v-model="newProduct.description"></textarea>
+</div>
           </div>
         </form>
         <div class="modal-footer">
@@ -113,6 +113,5 @@ const addProduct = () => {
 
 textarea {
   width: 100%;
-  resize: none;
 }
 </style>

@@ -74,10 +74,6 @@ const view = (orderId) => {
     router.push({ name: 'view', params: { id: orderId } });
 
 };
-// router.push({ name: 'view', params: { id: orderId } });
-
-
-
 
 const confirmDeleteOrder = (id) => {
     const isConfirmed = confirm("Êtes-vous sûr de vouloir supprimer cette commande?");

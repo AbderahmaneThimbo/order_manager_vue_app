@@ -57,7 +57,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="name" class="form-label">Address</label>
-                  <input type="text" name="name" class="form-control" :value="selectedCustomer?.address" readonly />
+                  <textarea name="description" class="form-control" :value="selectedCustomer?.address" readonly></textarea>
                 </div>
                 <div class="mb-3">
                   <label for="name" class="form-label">Email</label>
@@ -177,6 +177,9 @@ h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 input {
+  background-color: lavender;
+}
+textarea{
   background-color: lavender;
 }
 </style>

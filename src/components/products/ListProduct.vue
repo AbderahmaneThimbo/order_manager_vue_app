@@ -209,7 +209,6 @@ input {
 
 textarea {
   width: 100%;
-  resize: none;
   background-color: lavender;
 
 }
