@@ -1,7 +1,15 @@
 <script setup>
+import { ref } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
 
-const route = useRoute(); 
+const activeRoute = ref("");
+const route = useRoute();
+
+const setActiveRoute = (path) => {
+  activeRoute.value = path;
+};
+
+activeRoute.value = route.path;
 </script>
 
 <template>
@@ -15,29 +23,20 @@ const route = useRoute();
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item">
-              <RouterLink
-                :class="['nav-link', { active: route.path === '/' }]" 
-                id="pills-customers-tab" 
-                to="/"
-              >
+              <RouterLink :class="['nav-link', { active: activeRoute === '/' }]" id="pills-customers-tab" to="/"
+                @click="setActiveRoute('/')">
                 <i class="fa-solid fa-users"></i> Customers
               </RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink
-                :class="['nav-link', { active: route.path === '/products' }]" 
-                id="pills-products-tab" 
-                to="/products"
-              >
+              <RouterLink :class="['nav-link', { active: activeRoute === '/products' }]" id="pills-products-tab"
+                to="/products" @click="setActiveRoute('/products')">
                 <i class="fa-solid fa-basket-shopping"></i> Products
               </RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink
-                :class="['nav-link', { active: route.path === '/orders' }]" 
-                id="pills-orders-tab" 
-                to="/orders"
-              >
+              <RouterLink :class="['nav-link', { active: activeRoute === '/orders' }]" id="pills-orders-tab"
+                to="/orders" @click="setActiveRoute('/orders')">
                 <i class="fa-solid fa-cart-arrow-down"></i> Orders
               </RouterLink>
             </li>

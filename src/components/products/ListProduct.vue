@@ -46,7 +46,6 @@
 
 
 
-
     <div class="modal fade" id="viewproductModal" tabindex="-1" aria-labelledby="viewproductModalTitle"
       aria-hidden="true">
       <div class="modal-dialog custom-modal-width modal-lg">

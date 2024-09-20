@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submitOrder">
-
+    <h2 class="mb-2">Add Order </h2>
     <div class="d-flex justify-content-end mb-3 mt-3">
       <button type="button" class="btn btn-secondary" @click="goHome">Orders List</button>
       <button type="submit" class="btn btn-primary ms-2">Submit</button>

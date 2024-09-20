@@ -27,8 +27,7 @@
                     <td>{{ order.track_number }}</td>
                     <td>{{ order.status }}</td>
                     <td class="text-center">
-                        <button class="btn btn-outline-info btn-sm me-2" @click="viewDetails(order)"
-                            data-bs-toggle="modal" data-bs-target="#viewOrderModal">
+                        <button class="btn btn-outline-info btn-sm me-2" @click="view(order.id)">
                             <i class="fas fa-eye"></i>
                         </button>
                         <button class="btn btn-outline-warning btn-sm me-2" @click="redirectToEdit(order)">
@@ -42,36 +41,6 @@
             </tbody>
         </table>
 
-        <div class="modal fade" id="viewOrderModal" tabindex="-1" aria-labelledby="viewOrderModalTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="viewOrderModalTitle">View Order</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p><strong>Date:</strong> {{ selectedOrder?.date }}</p>
-                        <p><strong>Customer:</strong> {{ selectedOrder?.customer }}</p>
-                        <p><strong>Delivery Address:</strong> {{ selectedOrder?.delivery_address }}</p>
-                        <p><strong>Track Number:</strong> {{ selectedOrder?.track_number }}</p>
-                        <p><strong>Status:</strong> {{ selectedOrder?.status }}</p>
-
-                        <strong>Order Details:</strong>
-                        <ul>
-                            <li v-for="product in selectedOrder?.orderDetail" :key="product.name">
-                                {{ product.name }} - Quantity: {{ product.quantity }} - Price: {{ product.price }}mru
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
     </div>
@@ -101,9 +70,13 @@ const orders = ref([
 const selectedOrder = ref(null);
 
 
-const viewDetails = (order) => {
-    selectedOrder.value = order;
+const view = (orderId) => {
+    router.push({ name: 'view', params: { id: orderId } });
+
 };
+// router.push({ name: 'view', params: { id: orderId } });
+
+
 
 
 const confirmDeleteOrder = (id) => {
