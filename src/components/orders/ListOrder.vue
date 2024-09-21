@@ -3,7 +3,7 @@
         <h2 class="mb-2 d-inline-block">List of Orders</h2>
         <div class="d-flex justify-content-between mb-3">
             <h2 class="mb-0"></h2>
-            <router-link to="/create" class="btn btn-primary">
+            <router-link to="/create" class="btn btn-primary text-center" style="font-size: 1.0rem;">
                 Add New Order
             </router-link>
         </div>

@@ -47,9 +47,9 @@
               </div>
             </div>
             <div class="mb-3">
-  <label for="description" class="form-label">Description</label>
-  <textarea name="description" class="form-control" v-model="newProduct.description"></textarea>
-</div>
+              <label for="description" class="form-label">Description</label>
+              <textarea name="description" class="form-control" v-model="newProduct.description"></textarea>
+            </div>
           </div>
         </form>
         <div class="modal-footer">
@@ -113,5 +113,21 @@ const addProduct = () => {
 
 textarea {
   width: 100%;
+}
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+.modal-content {
+  border-radius: 0.5rem;
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+}
+
+.modal-title {
+  color: #343a40;
 }
 </style>

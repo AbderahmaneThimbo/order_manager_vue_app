@@ -33,7 +33,7 @@
               <i class="fas fa-eye"></i>
             </button>
             <button class="btn btn-outline-warning btn-sm me-2" @click="openEdit(product)" data-bs-toggle="modal"
-              data-bs-target="#editproductModal">
+              data-bs-target="#editProductModal">
               <i class="fas fa-edit"></i>
             </button>
             <button class="btn btn-outline-danger btn-sm" @click="confirmDeleteProduct(product.id)">
@@ -98,16 +98,8 @@
       </div>
     </div>
 
-    <div class="modal fade" id="editproductModal" tabindex="-1" aria-labelledby="editproductModalTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body">
-            <UpdateProduct :product="productToEdit" @product-updated="updateProduct" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <UpdateProduct :product="productToEdit" @product-updated="updateProduct" />
+
   </div>
 </template>
 
@@ -126,6 +118,7 @@ const products = ref([
 
 const selectedproduct = ref(null);
 const productToEdit = ref(null);
+
 
 const viewDetails = (product) => {
   selectedproduct.value = product;
@@ -156,22 +149,14 @@ const addProductToList = (newProduct) => {
 };
 
 const updateProduct = (updatedProduct) => {
-  const index = products.value.findIndex((product) => product.id === updatedProduct.id);
+  const index = products.value.findIndex(p => p.id === updatedProduct.id);
   if (index !== -1) {
-    products.value[index] = { ...updatedProduct };
+    products.value[index] = updatedProduct;
   }
-  productToEdit.value = null;
-
-  const modal = new bootstrap.Modal(document.getElementById("editProductModal"));
-  modal.hide();
 };
 </script>
 
 <style scoped>
-h2 {
-  color: #495057;
-}
-
 .table-hover tbody tr:hover {
   background-color: #f1f1f1;
 }
