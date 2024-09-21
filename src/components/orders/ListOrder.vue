@@ -94,9 +94,7 @@ const redirectToEdit = (order) => {
 </script>
 
 <style scoped>
-h2 {
-    color: #495057;
-}
+
 
 .table-hover tbody tr:hover {
     background-color: #f1f1f1;

@@ -27,10 +27,9 @@
               data-bs-target="#viewCustomerModal">
               <i class="fas fa-eye"></i>
             </button>
-            <button class="btn btn-outline-warning btn-sm me-2" @click="openEdit(customer)" data-bs-toggle="modal"
-              data-bs-target="#editCustomerModal">
-              <i class="fas fa-edit"></i>
-            </button>
+            <button class="btn btn-outline-warning btn-sm me-2" @click="openEdit(customer)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+  <i class="fas fa-edit"></i>
+</button>
             <button class="btn btn-outline-danger btn-sm" @click="confirmDeleteCustomer(customer.id)">
               <i class="fas fa-trash"></i>
             </button>
@@ -77,16 +76,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body">
-            <UpdateCustomer :customer="customerToEdit" @customer-updated="updateCustomer" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <UpdateCustomer :customer="customerToEdit" @customer-updated="updateCustomer" />
   </div>
 </template>
 
@@ -149,17 +139,14 @@ const updateCustomer = (updatedCustomer) => {
 </script>
 
 <style scoped>
-h2 {
-  color: #495057;
-}
 
 .table-hover tbody tr:hover {
   background-color: #f1f1f1;
 }
 
-.btn {
+/* .btn {
   font-size: 0.875rem;
-}
+} */
 
 .modal-content {
   border-radius: 0.5rem;
@@ -173,13 +160,13 @@ h2 {
   color: #343a40;
 }
 
-.custom-table {
+/* .custom-table {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+} */
 input {
   background-color: lavender;
 }
 textarea{
   background-color: lavender;
 }
-</style>
+</style> 

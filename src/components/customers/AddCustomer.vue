@@ -75,4 +75,16 @@ const addCustomer = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.modal-content {
+  border-radius: 0.5rem;
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+}
+
+.modal-title {
+  color: #343a40;
+}
+</style>
